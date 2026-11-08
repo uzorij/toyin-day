@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! ✨</title>
+    <!-- Google Fonts for elegant typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate-text">Happy Birthday, <span class="highlight">Bestie</span>! ✨</h1>
+            <p class="hero-subtitle">Celebrating a beautiful soul today and always.</p>
+            <div class="countdown-container">
+                <p class="countdown-title">The Celebration is Live! 🎉</p>
+            </div>
+            <a href="#gallery" class="btn">View Memories <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <p class="section-subtitle">A glimpse into some of your finest and happiest moments.</p>
+            
+            <div class="photo-grid">
+                <!-- Card 1 -->
+                <div class="media-card">
+                    <img src="https://unsplash.com" alt="Birthday Memory 1">
+                    <div class="card-caption">Glowing as usual ✨</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="media-card">
+                    <img src="https://unsplash.com" alt="Birthday Memory 2">
+                    <div class="card-caption">Live, Laugh, Love ❤️</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="media-card">
+                    <img src="https://unsplash.com" alt="Birthday Memory 3">
+                    <div class="card-caption">Pure happiness 🌟</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="media-card">
+                    <img src="https://unsplash.com" alt="Birthday Memory 4">
+                    <div class="card-caption">Unforgettable days 🥂</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section id="videos" class="section-padding alt-bg">
+        <div class="container">
+            <h2 class="section-title">Video Highlights</h2>
+            <p class="section-subtitle">Press play to relive the laughs and wild times.</p>
+            
+            <div class="video-grid">
+                <!-- Video Item 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <!-- Swap 'src' attribute with your actual video file link or path later -->
+                        <video controls poster="https://unsplash.com">
+                            <source src="your-video-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-caption">The midnight surprise! 🎂</div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <video controls poster="https://unsplash.com">
+                            <source src="your-video-2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-caption">Dance moves on point 💃</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warm Wishes Section -->
+    <section id="wishes" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Wishes From Friends</h2>
+            <p class="section-subtitle">A few sweet words from the people who love you most.</p>
+            
+            <div class="wishes-container">
+                <div class="wish-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="wish-text">"Happy Birthday to the most amazing friend anyone could ask for! May this year bring you endless laughter, success, and all the joy your heart can hold. Cheers to more growth and wins!"</p>
+                    <h4 class="wish-author">- Tunde xoxo</h4>
+                </div>
+                <div class="wish-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="wish-text">"You light up every room you walk into. Never stop shining! Thank you for being a reliable sister and friend. Have the absolute best day today!"</p>
+                    <h4 class="wish-author">- Chioma</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ for wonderful friend. Happy Birthday!</p>
+    </footer>
+
+    <!-- Lightbox Modal for Photo viewing -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

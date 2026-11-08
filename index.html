@@ -1,129 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday! ✨</title>
-    <!-- Google Fonts for elegant typography -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Oluwatoyin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#120d0b; --bg2:#1a1310; --card:#201813; --gold:#d9b779; --gold2:#f0dcb0;
+  --ivory:#f6ecdc; --muted:#a69884; --line:rgba(217,183,121,.22);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ivory);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+.wrap{width:min(1120px,90%);margin:0 auto}
+section{padding:110px 0}
+.eyebrow{font-size:.72rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);text-align:center}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5vw,3.6rem);text-align:center;margin:10px 0 14px;line-height:1.1}
+h2 em{color:var(--gold2)}
+.lede{text-align:center;color:var(--muted);max-width:520px;margin:0 auto 60px}
+.rule{width:1px;height:60px;background:linear-gradient(var(--gold),transparent);margin:0 auto 18px}
+
+/* Hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:60px 20px;
+  background:radial-gradient(ellipse 70% 55% at 50% 38%,rgba(217,183,121,.16),transparent 70%),var(--bg)}
+.hero.has-photo{background-size:cover;background-position:center}
+.hero.has-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(18,13,11,.55),var(--bg))}
+.hero-in{position:relative;z-index:1}
+.hero .eyebrow{margin-bottom:26px;animation:up 1.2s .2s both}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.6rem,13vw,9rem);line-height:.95;letter-spacing:-.01em;animation:up 1.4s .5s both}
+.hero h1 em{display:block;color:var(--gold2);font-weight:400}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);color:var(--muted);margin:28px 0 44px;animation:up 1.4s .9s both}
+.cta{display:inline-block;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);text-decoration:none;
+  border:1px solid var(--line);padding:16px 36px;border-radius:99px;transition:.4s;animation:up 1.4s 1.2s both}
+.cta:hover{background:var(--gold);color:#1a120a;border-color:var(--gold)}
+.scroll-line{position:absolute;bottom:28px;left:50%;width:1px;height:50px;background:linear-gradient(var(--gold),transparent);animation:pulse 2.4s infinite}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{opacity:.25}}
+
+/* Letters */
+.letters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:28px;margin-bottom:28px}
+.letter{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:44px 38px;position:relative}
+.letter::before{content:"“";font-family:var(--serif);font-size:6rem;line-height:.6;color:var(--gold);opacity:.35;display:block;margin-bottom:14px}
+.letter p{font-family:var(--serif);font-size:1.28rem;line-height:1.65;white-space:pre-line;color:var(--ivory)}
+.letter .from{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+
+/* Poem */
+.poem-sec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.poem{max-width:640px;margin:0 auto;text-align:center}
+.poem .stanza{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.75;color:var(--ivory);margin-bottom:34px;white-space:pre-line}
+.poem .stanza.last{color:var(--gold2)}
+.poem .from{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+
+/* Gallery */
+.masonry{columns:3 280px;column-gap:18px}
+.ph{break-inside:avoid;margin-bottom:18px;position:relative;overflow:hidden;border-radius:3px;cursor:zoom-in;background:var(--card)}
+.ph img{width:100%;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s;filter:saturate(.95)}
+.ph:hover img{transform:scale(1.05);filter:saturate(1.1)}
+.ph .cap{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 16px;font-family:var(--serif);font-style:italic;font-size:1.1rem;
+  background:linear-gradient(transparent,rgba(12,8,6,.85));opacity:0;transition:.4s}
+.ph:hover .cap{opacity:1}
+.empty{text-align:center;color:var(--muted);font-family:var(--serif);font-style:italic;font-size:1.3rem;border:1px dashed var(--line);padding:50px 20px}
+
+/* Videos */
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px}
+.vid{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.vid video{width:100%;display:block;background:#000;max-height:520px}
+.vid .cap{padding:16px 20px;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--gold2)}
+
+/* Closing */
+.close{text-align:center;padding:130px 0 90px}
+.close .big{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,7vw,5rem);line-height:1.1}
+.close .big em{color:var(--gold2)}
+.close p{color:var(--muted);margin-top:22px}
+footer{text-align:center;padding:30px 20px calc(40px + env(safe-area-inset-bottom,0px));font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line)}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,7,5,.95);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:100;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:92vw;max-height:78vh;border-radius:3px;animation:zoom .35s}
+.lb .t{margin-top:16px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold2);text-align:center}
+.lb button{position:absolute;background:none;border:0;color:var(--ivory);font-size:2.4rem;cursor:pointer;padding:14px;opacity:.7}
+.lb button:hover{opacity:1;color:var(--gold)}
+.lb .x{top:14px;right:18px}.lb .p{left:10px;top:50%}.lb .n{right:10px;top:50%}
+@keyframes zoom{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:none}}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:600px){section{padding:80px 0}.letter{padding:34px 26px}.ph .cap{opacity:1}}
+</style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="animate-text">Happy Birthday, <span class="highlight">Bestie</span>! ✨</h1>
-            <p class="hero-subtitle">Celebrating a beautiful soul today and always.</p>
-            <div class="countdown-container">
-                <p class="countdown-title">The Celebration is Live! 🎉</p>
-            </div>
-            <a href="#gallery" class="btn">View Memories <i class="fas fa-arrow-down"></i></a>
-        </div>
-    </header>
+<header class="hero" id="hero">
+  <div class="hero-in">
+    <p class="eyebrow">A little book of love · 2026</p>
+    <h1>Happy Birthday<em>Oluwatoyin</em></h1>
+    <p class="sub">Sister Toyin, stepping into Chapter 3</p>
+    <a class="cta" href="#words">Open your gift</a>
+  </div>
+  <div class="scroll-line"></div>
+</header>
 
-    <!-- Photo Gallery Section -->
-    <section id="gallery" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Photo Gallery</h2>
-            <p class="section-subtitle">A glimpse into some of your finest and happiest moments.</p>
-            
-            <div class="photo-grid">
-                <!-- Card 1 -->
-                <div class="media-card">
-                    <img src="https://unsplash.com" alt="Birthday Memory 1">
-                    <div class="card-caption">Glowing as usual ✨</div>
-                </div>
-                <!-- Card 2 -->
-                <div class="media-card">
-                    <img src="https://unsplash.com" alt="Birthday Memory 2">
-                    <div class="card-caption">Live, Laugh, Love ❤️</div>
-                </div>
-                <!-- Card 3 -->
-                <div class="media-card">
-                    <img src="https://unsplash.com" alt="Birthday Memory 3">
-                    <div class="card-caption">Pure happiness 🌟</div>
-                </div>
-                <!-- Card 4 -->
-                <div class="media-card">
-                    <img src="https://unsplash.com" alt="Birthday Memory 4">
-                    <div class="card-caption">Unforgettable days 🥂</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="words">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow">Letters to you</p>
+    <h2>Words from <em>your people</em></h2>
+    <p class="lede">Written by hearts that are grateful for you.</p>
+    <div class="letters" id="letters"></div>
+  </div>
+</section>
 
-    <!-- Video Showcase Section -->
-    <section id="videos" class="section-padding alt-bg">
-        <div class="container">
-            <h2 class="section-title">Video Highlights</h2>
-            <p class="section-subtitle">Press play to relive the laughs and wild times.</p>
-            
-            <div class="video-grid">
-                <!-- Video Item 1 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <!-- Swap 'src' attribute with your actual video file link or path later -->
-                        <video controls poster="https://unsplash.com">
-                            <source src="your-video-1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="card-caption">The midnight surprise! 🎂</div>
-                </div>
+<section class="poem-sec" id="poem">
+  <div class="wrap">
+    <p class="eyebrow">From your husband</p>
+    <h2>A poem for <em>my queen</em></h2>
+    <div class="lede"></div>
+    <div class="poem" id="poemBox"></div>
+  </div>
+</section>
 
-                <!-- Video Item 2 -->
-                <div class="video-card">
-                    <div class="video-wrapper">
-                        <video controls poster="https://unsplash.com">
-                            <source src="your-video-2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="card-caption">Dance moves on point 💃</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="gallery">
+  <div class="wrap">
+    <p class="eyebrow">Moments</p>
+    <h2>Memories we <em>keep</em></h2>
+    <p class="lede">A few of the days that made us smile.</p>
+    <div class="masonry" id="photos"></div>
+  </div>
+</section>
 
-    <!-- Warm Wishes Section -->
-    <section id="wishes" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Wishes From Friends</h2>
-            <p class="section-subtitle">A few sweet words from the people who love you most.</p>
-            
-            <div class="wishes-container">
-                <div class="wish-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="wish-text">"Happy Birthday to the most amazing friend anyone could ask for! May this year bring you endless laughter, success, and all the joy your heart can hold. Cheers to more growth and wins!"</p>
-                    <h4 class="wish-author">- Tunde xoxo</h4>
-                </div>
-                <div class="wish-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="wish-text">"You light up every room you walk into. Never stop shining! Thank you for being a reliable sister and friend. Have the absolute best day today!"</p>
-                    <h4 class="wish-author">- Chioma</h4>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="videos" style="background:var(--bg2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">In motion</p>
+    <h2>Press <em>play</em></h2>
+    <p class="lede">Laughter and love, caught on camera.</p>
+    <div class="vids" id="vids"></div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Made with ❤️ for wonderful friend. Happy Birthday!</p>
-    </footer>
+<section class="close">
+  <div class="wrap rv">
+    <p class="eyebrow">Chapter 3</p>
+    <div class="big" style="margin-top:14px">May it be your<br><em>most beautiful yet.</em></div>
+    <p>Happy birthday, Toyin. We love you.</p>
+  </div>
+</section>
+<footer>Made with love by the people who adore you</footer>
 
-    <!-- Lightbox Modal for Photo viewing -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" src="" alt="">
-        <div id="lightbox-caption"></div>
-    </div>
+<div class="lb" id="lb">
+  <button class="x" aria-label="Close">&times;</button>
+  <button class="p" aria-label="Previous">&#8249;</button>
+  <button class="n" aria-label="Next">&#8250;</button>
+  <img id="lbImg" alt=""><div class="t" id="lbCap"></div>
+</div>
 
-    <script src="script.js"></script>
+<script>
+/* =====================================================
+   EDIT HERE. Add new photos, videos and messages below.
+   Put photo files in a "photos" folder and videos in a
+   "videos" folder next to index.html, then list them.
+   ===================================================== */
+
+// Optional hero background photo, e.g. "photos/hero.jpg". Leave "" for none.
+const HERO_PHOTO = "";
+
+const PHOTOS = [
+  // { src: "photos/toyin1.jpg", caption: "Glowing as always" },
+  // { src: "photos/toyin2.jpg", caption: "" },
+];
+
+const VIDEOS = [
+  // { src: "videos/clip1.mp4", caption: "A message from the girls" },
+];
+
+const LETTERS = [
+  { from: "Faithful", text:
+`Sadiku Oluwatoyin, Sister Toyin as I'll call her.
+
+Not by blood, but there are some relationships that end up having the same thickness as blood, and believe me, ours is one of them. Though I might be forgetful, how can I forget the care I have received, or the food I collected on the 7th of November 😂
+
+Egbon mi ti o wa nibẹ nigbagbogbo nigbati mo nilo iranlọwọ rẹ. O ṣeun pupọ.
+
+Help me manage the Yoruba ma. Happy birthday Sis Toyin 🎉` },
+
+  { from: "Royal", text:
+`Happy birthday, my sister 💋🥳
+
+I honestly appreciate you more than words can express. Thank you for always being there for me, for your support, kindness and for being someone I can count on. In you, I found not just a friend but a brother and a sister. You have such a beautiful heart, and I pray you never lose that part of yourself.
+
+Olúwatóin, ọmọ ẹni tó ń tọ́jú ẹni, ọmọ rere, ọmọ ọlọ́lá, ọmọ tí inú rere ń bẹ lọ́kàn rẹ̀. ❤️
+
+As you step into Chapter 3, I pray it brings you beautiful surprises, answered prayers, genuine happiness, growth and everything your heart desires. May God continue to bless you and make life beautiful for you.
+
+I love and appreciate you so much.` },
+];
+
+const POEM = {
+  from: "Emmanuel",
+  stanzas: [
+`Today, the world celebrates you,
+But I celebrate the blessing of having you.
+This year, I gained more than a wife,
+I gained a lifetime of reasons to be grateful.`,
+`I cherish you, I adore you,
+My beautiful woman, my queen.
+There's no ordinary day with you
+that isn't worth more than it seems.`,
+`I love the woman you are,
+The beauty you carry beyond your face,
+And the warmth of knowing
+That in this life, we share the same space.`,
+`May your new age bring you the happiness you deserve,
+May your heart never run short of reasons to smile.
+And may I never stop giving you reasons
+To feel loved, wanted and cherished.`,
+`If I had to begin this journey again,
+I'd still find you, still choose you, still say yes.`,
+`Happy birthday, my darling wife.
+You are not just someone I love;
+You are someone I'm endlessly grateful to have 🥰😍`
+  ]
+};
+
+/* ================= Rendering (no need to edit) ================= */
+const $ = id => document.getElementById(id);
+const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt) e.textContent = txt; return e; };
+
+if (HERO_PHOTO) { const h = $('hero'); h.classList.add('has-photo'); h.style.backgroundImage = `url('${HERO_PHOTO}')`; }
+
+LETTERS.forEach(l => {
+  const c = el('div', 'letter rv');
+  c.append(el('p', '', l.text), el('div', 'from', l.from));
+  $('letters').append(c);
+});
+
+POEM.stanzas.forEach((s, i) => {
+  $('poemBox').append(el('p', 'stanza rv' + (i === POEM.stanzas.length - 1 ? ' last' : ''), s));
+});
+$('poemBox').append(el('div', 'from rv', '— ' + POEM.from));
+
+const shown = [];
+if (PHOTOS.length) {
+  PHOTOS.forEach(p => {
+    const d = el('div', 'ph rv'), im = el('img');
+    im.src = p.src; im.alt = p.caption || 'Memory'; im.loading = 'lazy';
+    im.onerror = () => d.remove();
+    d.append(im);
+    if (p.caption) d.append(el('div', 'cap', p.caption));
+    d.onclick = () => openLb(p);
+    $('photos').append(d); shown.push(p);
+  });
+} else {
+  $('photos').style.columns = '1';
+  $('photos').append(el('div', 'empty', 'Our favourite moments are on their way…'));
+}
+
+if (VIDEOS.length) {
+  VIDEOS.forEach(v => {
+    const c = el('div', 'vid rv'), vid = el('video');
+    vid.controls = true; vid.preload = 'metadata'; vid.playsInline = true;
+    vid.src = v.src + '#t=0.1';
+    c.append(vid);
+    if (v.caption) c.append(el('div', 'cap', v.caption));
+    $('vids').append(c);
+  });
+} else {
+  $('vids').append(el('div', 'empty', 'Video messages are coming soon…'));
+}
+
+/* Lightbox */
+let cur = 0;
+const lb = $('lb');
+function openLb(p) { cur = PHOTOS.indexOf(p); show(); lb.classList.add('on'); }
+function show() { const p = PHOTOS[cur]; $('lbImg').src = p.src; $('lbCap').textContent = p.caption || ''; }
+function step(d) { cur = (cur + d + PHOTOS.length) % PHOTOS.length; show(); }
+lb.querySelector('.x').onclick = () => lb.classList.remove('on');
+lb.querySelector('.p').onclick = e => { e.stopPropagation(); step(-1); };
+lb.querySelector('.n').onclick = e => { e.stopPropagation(); step(1); };
+lb.onclick = e => { if (e.target === lb) lb.classList.remove('on'); };
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('on')) return;
+  if (e.key === 'Escape') lb.classList.remove('on');
+  if (e.key === 'ArrowLeft') step(-1);
+  if (e.key === 'ArrowRight') step(1);
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.rv').forEach(e => io.observe(e));
+</script>
 </body>
 </html>

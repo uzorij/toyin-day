@@ -166,15 +166,27 @@ footer{text-align:center;padding:30px 20px calc(40px + env(safe-area-inset-botto
    ===================================================== */
 
 // Optional hero background photo, e.g. "photos/hero.jpg". Leave "" for none.
-const HERO_PHOTO = "";
+const HERO_PHOTO = { src: "photos/toyin half wed shot.jpeg" };
 
 const PHOTOS = [
-  // { src: "photos/toyin1.jpg", caption: "Glowing as always" },
-  // { src: "photos/toyin2.jpg", caption: "" },
+  { src: "photos/toyin &  rad geng.jpeg", caption: "The full geng 🤭🤭" },
+  { src: "photos/toyin and tobi.jpeg", caption: "No one can break us apart 😋" },
+  { src: "photos/faithful.jpeg", caption: "Aunty mi 😅😅" },
+  { src: "photos/toyin & hus kiss.jpeg", caption: "Happy birthday Darling 😘💝" },
+  { src: "photos/royal & toyin.jpeg", caption: "Thank you for being you💚💖" },
+  { src: "photos/toyin casual red shirt.jpeg", caption: "Always on steeze 😜😜" },
+  { src: "photos/toyin native thanksgiving.jpeg", caption: "Always smiling for the camera 😎😄" },
+  { src: "photos/toyin old.jpeg", caption: "A little throwback 😉" },
+  { src: "photos/toyin wedding pic.jpeg", caption: "Thank you for coming into my life 💖 " },
+  { src: "photos/toyin with friend not clear though.jpeg", caption: "Always welcoming, thank you 💝" },
+  { src: "photos/wed blue shot.jpeg", caption: "💙💙💙" },
 ];
 
 const VIDEOS = [
-  // { src: "videos/clip1.mp4", caption: "A message from the girls" },
+   { src: "videos/toyin video no permission.mp4", caption: "Auntie is always busy 😅" },
+   { src: "videos/toyin dancing with hus.mp4", caption: "One of the special moments you gave to me, thank you. 🥰" },
+   { src: "videos/royal & toyin tiktok.mp4", caption: "Always down for a tiktok trend 😊" },
+   { src: "videos/toyin going to class cutie.mp4", caption: "Just a quick snap for my fans 😂" },
 ];
 
 const LETTERS = [
@@ -239,7 +251,7 @@ You are someone I'm endlessly grateful to have 🥰😍`
 const $ = id => document.getElementById(id);
 const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt) e.textContent = txt; return e; };
 
-if (HERO_PHOTO) { const h = $('hero'); h.classList.add('has-photo'); h.style.backgroundImage = `url('${HERO_PHOTO}')`; }
+if (HERO_PHOTO) { const h = $('hero'); h.classList.add('has-photo'); h.style.backgroundImage = `url('${HERO_PHOTO.src}')`; }
 
 LETTERS.forEach(l => {
   const c = el('div', 'letter rv');
